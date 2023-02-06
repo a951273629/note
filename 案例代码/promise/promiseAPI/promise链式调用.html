@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve();
+            }, 1000);
+        });
+
+        p.then(value=>{
+            console.log('成功了1',value);
+            return Promise.reject('aa');
+        },reason=>{
+            console.log('失败了1',reason);
+        }).
+        then(value=>{
+            console.log('成功了2',value);
+            return true;
+        },reason=>{
+            console.log('失败了2',reason);
+            return 100;
+        }).
+        then(value=>{
+            console.log('成功了3',value);
+            throw 900;
+        },reason=>{
+            console.log('失败了3',reason);
+            return false
+        }).
+        then(value=>{
+            console.log('成功了4',value);
+            return 100
+        },reason=>{
+            console.log('失败了4',reason);
+        })
+        /**
+            输出    成功了1 undefined
+                    失败了2 aa
+                    成功了3 100
+                    失败了4 900
+*/
+    </script>
+</body>
+</html>

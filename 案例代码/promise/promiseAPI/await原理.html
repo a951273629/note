@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function timer(count) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(Date.now()%2===1) resolve(`还有机会${count}`);
+                    reject(`结束了${count}`)
+                }, 1000);
+            });
+        }
+
+        async function demo(){
+            // 程序员的写法 
+            let p = await timer(1);
+            console.log(p);
+            console.log(10);
+            console.log(100);
+
+        }
+        /**
+         *
+         浏览器翻译后的写法
+         */
+        p.then(value=>{
+                console.log(p);
+                console.log(10);
+                console.log(100);
+            })
+    </script>
+</body>
+</html>

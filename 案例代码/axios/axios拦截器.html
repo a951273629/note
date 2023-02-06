@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+</head>
+<body>
+    <button id="btn">点一点</button>
+    <script>
+        // axios请求拦截器
+        axios.interceptors.request.use((config)=>{
+            if(Date.now()%2 === 0){
+                config.headers.token='asdasd344dsc'
+            }
+            console.log(config);
+            return config
+        })
+
+        // axios响应拦截器
+        axios.interceptors.response.use(response=>{
+            if(Date.now()%2 === 0){
+                return response.data;
+            }
+            return "时间戳不是偶数失败"
+        },error=>{
+            console.log('响应拦截器失败的回调');
+            alert(error)
+            // 返回一个pending状态的promise 让请求不走成功也不走失败中断在这里
+            return new Promise(()=>{});
+        })
+
+        btn.onclick = ()=>{
+            axios.get('http://localhost:5000/persons').then((response) => {
+                console.log(response);
+            },error=>{
+
+            })
+        }
+
+    </script>
+</body>
+</html>

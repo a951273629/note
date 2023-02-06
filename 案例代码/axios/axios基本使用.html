@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="btn">点一下哦</button><br>
+    <button id="btn2">点一下加老王</button><br>
+    <button id="btn3">更新</button>
+    <script>
+        let btn = document.querySelector('#btn');
+        let btn2 = document.querySelector('#btn2');
+        let btn3 = document.querySelector('#btn3');
+        btn.onclick = ()=>{
+            // let result = axios({
+
+            //     url:'http://localhost:5000/person',
+            //     method:'GET',
+            //     params:{
+            //         id:'1'
+            //     }
+            // })
+            // result.then(response=>{
+            //     console.log('请求成功',response.data);
+            // },
+            // error=>{
+            //     console.log('请求失败',error);
+            // })
+
+
+            // axios.get('http://localhost:5000/person',{params:{id:'1'}}).then(
+            //     response=>{
+            //     console.log('请求成功',response.data);
+            // },
+            // error=>{
+            //     console.log('请求失败',error);
+            // }
+            // )
+
+        };
+        btn2.onclick = ()=>{
+            axios({
+                url:"http://localhost:5000/person",
+                method:"POST",
+                data:{
+                    name:'大哥',
+                    age:'26'
+                }
+            }).then(response=>{
+                console.log('请求成功',response.data);
+            },error=>{
+                console.log('请求失败',error.data);
+            })
+
+            axios.post('http://localhost:5000/person',{name:'大哥',age:'26'}).then(
+                response=>{
+                console.log('请求成功',response.data);
+            },
+            error=>{
+                console.log('请求失败',error);
+            }
+            )
+        }
+        btn3.onclick= ()=>{
+            axios({
+                url:"http://localhost:5000/person",
+                method:"PUT",
+                data:{
+                    id: "1",
+                    name:'大萌萌',
+                    age:'28'
+                }
+            }).then(response=>{
+                console.log('请求成功',response.data);
+            },error=>{
+                console.log('请求失败',error.data);
+            })
+
+            axios.put('http://localhost:5000/person',{id:'1',name:'大哥',age:'26'}).then(
+                response=>{
+                console.log('请求成功',response.data);
+            },
+            error=>{
+                console.log('请求失败',error);
+            }
+            )
+        }
+        console.log('1111');
+    </script>
+</body>
+</html>

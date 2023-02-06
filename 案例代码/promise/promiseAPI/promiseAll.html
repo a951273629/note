@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            resolve('p1成功')
+        });
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('家里有矿')
+            }, 500);
+        });
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('矿里有家')
+            }, 2000);
+        });
+        let p = Promise.all([p1,p2,p3])
+        p.then(value=>{console.log('成功了的值是:',value);},
+        reason=>{
+            console.log('失败了原因是:',reason);
+        }
+        )
+        //输出 成功了的值是: (3) ['p1成功', '家里有矿', '矿里有家']
+
+
+    </script>
+</body>
+</html>

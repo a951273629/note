@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(Object.is(100,100)); 
+
+        // console.log(Object.is(NaN,NaN));
+
+        // console.log(typeof NaN);
+        // console.log(NaN >-);
+
+
+        // console.log(Object.is(5,5)); //true
+        let a={
+        name:"大帅",
+        age:18
+        }
+        let b={
+        name:"二帅",
+        ag2e:189
+        }
+        console.log(Object.assign(a,b)) //Object {name: "二帅", age: 18, ag2e: 189}
+        let school = {
+            name:'university'
+        }
+        let cities = {
+            names:['大帅','二帅','三帅']
+
+        }
+        // 设置原型对象
+        Object.setPrototypeOf(school,cities)
+        //获取原型对象
+        console.log(Object.getPrototypeOf(school));
+        console.log(school.proto);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- 面试题 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        setTimeout(() => {
+         console.log('time1');
+         Promise.resolve(5).then(value=>{
+            console.log('成功5',value);
+            })   
+        });
+        setTimeout(() => {
+         console.log('time2');   
+        });
+        Promise.resolve(3).then(value=>{
+            console.log('成功3',3);
+        })
+        Promise.resolve(4).then(value=>{
+            console.log('成功4',4);
+        })
+        /**
+         * 
+         输出
+
+        成功3 3
+        成功4 4
+        time1
+        成功5 5
+        time2
+        */
+    </script>
+</body>
+</html>

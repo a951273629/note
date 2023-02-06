@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // function Phone(number,address) {
+        //     this.number = number;
+        //     this.address = address;
+        // }
+        // Phone.prototype.call = function(){
+        //     console.log(this.number,this.address);
+
+        // }
+
+        // let p =new Phone('1233','天山人间')
+        // p.call();
+        class Test{
+            get person(){
+                console.log("我不干净了！")
+            }
+            set person(value){
+                console.log("我一点也不干净了！")
+                console.log(value)
+            }
+        }
+            let t=new Test()
+            console.log(t)
+            t.person="name"
+            console.log(t.person);
+    </script>
+</body>
+</html>

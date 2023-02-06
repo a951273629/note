@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // try {
+            // something()
+            // } catch (error) {
+            // alert(error.message)
+            // }
+       
+            function something() {
+                let data = Date.now()%2
+                    if (data===1) {
+                        console.log('当前时间为奇数，可以执行任务',data)
+                    } else { //如果时间为偶数抛出异常，由调用来处理
+                // throw new Error('当前时间为偶数，无法执行任务')
+                throw new Error('我是帅哥哦,跑出帅帅的错误')
+                 }
+           
+            }
+            something();
+    </script>
+</body>
+</html>

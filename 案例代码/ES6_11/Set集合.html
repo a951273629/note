@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1 数组去重
+       
+        // // 将集合展开到一个数组中 
+        // let result = [...new Set(arr)]
+
+        // console.log(result); //输出1,2,3,4,5,6,7,8,9
+
+        //求交集 (交集集合A有集合B也有)
+       
+        // let set2 = new Set([2,34,5,6,7])
+
+        // let result = [...new Set(arr)].filter(item=>{
+        //     if(set2.has(item)) return true;
+        //     return false;
+        // })
+        // console.log(result); //输出 2 5 6 7
+
+        // 求并集 先将两个数组合并 再去重 然后再转换为数组
+        // let arr = [1,2,3,4]
+        // let arr2 = [3,4,11,21]
+        // let union = [...new Set([...arr,...arr2])]
+        // console.log(union);  // 输出 1,2,3,4,11,21
+
+        //求差集 这里是把A里面和 B里面一样的去除掉
+        // let A = new Set([1,2,3,4])
+        // let B = new Set([2,34,5,6,7])
+        // let difference = [...A].filter(item=>{
+        //     if(B.has(item)) return false;
+        //     return true;
+        // })
+        // console.log(difference); // 1 3 4
+
+        // 求差集 把A里面和B里面一样的元素从B里面去掉(谁对谁求差集最后的结果是不一样的)
+        let A = new Set([1,2,3,4])
+        let B = new Set([2,34,5,6,7])
+        let difference = [...B].filter(item=>{
+            if(A.has(item)) return false;
+            return true;
+        })
+        console.log(difference); // 34 5 6 7
+    </script>
+</body>
+</html>

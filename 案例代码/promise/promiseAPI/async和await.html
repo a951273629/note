@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function timer(count) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(Date.now()%2===1) resolve(`还有机会${count}`);
+                    reject(`结束了${count}`)
+                }, 1000);
+            });
+        }
+        //定义一个立即执行函数 前面用async修饰 前面要加一个;号 表示前面的语句已经结束
+        ;(async()=>{
+            try {
+                let value = await timer(1);
+                console.log('等到了',value);
+
+                value = await timer(2);
+                console.log('等到了',value);
+
+                value = await timer(3);
+                console.log('等到了',value);
+
+                value = await timer(4);
+                console.log('等到了',value);
+
+                value = await timer(5);
+                console.log('等到了',value);
+            } catch (reason) {
+                console.log('等不到了',reason);
+            }
+        })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+      .tudou::before {
+        content: "1";
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4) url(img/arr.png) no-repeat center;
+      }
+      /* 神奇写法鼠标经过时显示 */
+      .tudou:hover::before {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tudou">1</div>
+  </body>
+</html>

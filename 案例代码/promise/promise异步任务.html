@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建一个新的p对象promise
+        const p = new Promise((resolve, reject) => { // 执行器函数
+        // 执行异步操作任务
+            new XMLHtttpRequest()
+        })
+        //then会将回调函数推入队列 所以多个then都会生效
+        p.then(
+        value => { // 接收得到成功的value数据 onResolved
+            console.log('成功的回调1', value)  // 成功的回调 成功的数据，time=1615015043258
+        },
+        reason => { // 接收得到失败的reason数据 onRejected
+            console.log('失败的回调1', reason)    // 失败的回调 失败的数据，time=1615014995315
+        }
+        )
+
+    </script>
+</body>
+</html>

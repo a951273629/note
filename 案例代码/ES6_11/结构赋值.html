@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let name='狗狗子'
+         let change = function(){
+            console.log('改变我们');
+         }
+         
+         const school={
+            name,   //等于 name:name,
+            change,  //等于 change:change
+            improve(){
+                console.log('改变我们');     //  这样等于 improve:function(){ ..} 
+            }
+         }
+    </script>
+</body>
+</html>

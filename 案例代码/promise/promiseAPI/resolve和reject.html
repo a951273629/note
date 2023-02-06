@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let p1 = Promise.reject('原因没有钱')
+        // let p =Promise.resolve(p1)
+
+
+
+        let p1 = Promise.resolve('原因家里有矿')
+        let p =Promise.reject(p1)
+
+        p.then(
+        value=>{
+            console.log('成功了',value);
+        },reason=>{
+            console.log('失败了',reason);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //异步编程 加上*号这是一个纯回调函数
+        //yield是函数代码的分割符
+        function * Fun() {
+            console.log("一只老虎")
+            let result1=yield "我是第一个！";
+            console.log(result1)
+            console.log("两只老虎")
+            let result2=yield "我是第二个！";
+            console.log(result2)
+            console.log("真可爱")
+            let result3=yield "我是第三个！";
+            console.log(result3)
+        }
+        //调用时不执行	
+        let fun=Fun()
+        //调用next时才执行
+        fun.next()
+        fun.next("我是第一个的回调")
+        fun.next("我是第二个的回调")
+        fun.next("我是第三个的回调")
+
+    </script>
+</body>
+</html>

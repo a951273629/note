@@ -1,0 +1,12 @@
+.title{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: pink;
+    margin: 0 auto;
+}
+.img {
+    width: 600px;
+    height: 600px;
+    background: url('../img/pic.jpg') no-repeat;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bar {
+        width: 400px;
+        height: 15px;
+        border: 1px solid red;
+        border-radius: 8px;
+        margin: auto;
+      }
+      .bar_in {
+        height: 100%;
+        width: 20%;
+        background-color: red;
+        border-radius: 8px;
+        transition: all 1.5s;
+      }
+      .bar_in:hover {
+        width: 95%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar">
+      <div class="bar_in"></div>
+    </div>
+  </body>
+</html>

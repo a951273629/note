@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            index:0,
+            name:'终极一班',
+            list:['小帅','二帅','三帅'],
+            //自定义obj对象的迭代器
+            [Symbol.iterator](){
+                return{
+                    next:()=>{
+                    if (this.index==this.list.length) {
+                        return {value:undefined,done:true}
+                    }
+                    let result ={
+                        value:this.list[this.index],
+                        done:false
+                    }
+                    this.index++
+                    return result;
+                    
+                }
+                }
+            }
+        }
+        for (const item of obj) {
+            console.log(item);
+        }
+        // let list = ['小帅','二帅','三帅']
+
+        // //这里返回一个迭代器
+        // let iterator = list[Symbol.iterator]();
+
+        // console.log(iterator.next());//done:false,value:'小帅'  //done:false意味着后面还有属性
+        // console.log(iterator.next());//done:false,value:'小帅'
+        // console.log(iterator.next());//done:false,value:'小帅'
+        // console.log(iterator.next());//done:true,value:undefined
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function timer(count) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(Date.now()%2===1) resolve(`正经时间${count}`);
+                    reject(`不正经时间${count}`)
+                }, 1000);
+            });
+        }
+
+         timer(1)
+        .then(value=>{console.log('成功的回调',value); return timer(2)},reason=>{console.log('失败的回调',reason);return new Promise((resolve, reject) => {
+            
+        })})
+        .then(value=>{console.log('成功的回调',value); return timer(3)}
+        ,reason=>{console.log('失败的回调'
+        ,reason); return new Promise((resolve, reject) => { });}
+        )
+        .then(value=>{console.log('成功的回调',value); return timer(4)}
+        ,reason=>{console.log('失败的回调',reason); return timer(4)}
+        )
+        .then(value=>{console.log('成功的回调',value); return timer(5)}
+        ,reason=>{console.log('失败的回调',reason); return timer(5)}
+        )
+        .then(value=>{console.log('成功的回调',value); return timer(6)}
+        ,reason=>{console.log('失败的回调',reason);}
+        )
+
+        /**
+            输出
+
+            失败的回调 不正经时间1
+            成功的回调 正经时间2
+            成功的回调 正经时间3
+            失败的回调 不正经时间4
+            失败的回调 不正经时间5
+            */
+
+
+
+    
+    </script>
+</body>
+</html>

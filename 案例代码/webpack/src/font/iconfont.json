@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "33424274",
+      "name": "1_5g-naas",
+      "font_class": "a-1_5g-naas",
+      "unicode": "e755",
+      "unicode_decimal": 59221
+    },
+    {
+      "icon_id": "33424341",
+      "name": "68_devcloud-collaboration",
+      "font_class": "a-68_devcloud-collaboration",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "33424343",
+      "name": "72_enterprise-app-cloudvc",
+      "font_class": "a-72_enterprise-app-cloudvc",
+      "unicode": "e75f",
+      "unicode_decimal": 59231
+    },
+    {
+      "icon_id": "33424350",
+      "name": "75_functiongraph",
+      "font_class": "a-75_functiongraph",
+      "unicode": "e760",
+      "unicode_decimal": 59232
+    },
+    {
+      "icon_id": "33424351",
+      "name": "82_hrm",
+      "font_class": "a-82_hrm",
+      "unicode": "e761",
+      "unicode_decimal": 59233
+    },
+    {
+      "icon_id": "33424352",
+      "name": "79_gaussdb-for-nosql",
+      "font_class": "a-79_gaussdb-for-nosql",
+      "unicode": "e762",
+      "unicode_decimal": 59234
+    },
+    {
+      "icon_id": "33424353",
+      "name": "92_iot-device-access",
+      "font_class": "a-92_iot-device-access",
+      "unicode": "e763",
+      "unicode_decimal": 59235
+    }
+  ]
+}

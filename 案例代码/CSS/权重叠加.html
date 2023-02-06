@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul 和li的权重会叠加0,0,0,1+ 0,0,0,1=0,0,0,2 叠加的权重不会进位  */
+        ul li {
+            color:pink
+        }
+        /* li的权重为0,0,0,1 小于上面的叠加权重*/
+        li {
+            color: red;
+        }
+        /* 所以最后展示color：pink */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>到底是啥色</li>
+        <li>到底是啥色</li>
+        <li>到底是啥色</li>
+        <li>到底是啥色</li>
+    </ul>
+</body>
+</html>

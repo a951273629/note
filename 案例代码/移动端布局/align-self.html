@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 600px;
+        height: 200px;
+        background-color: pink;
+        display: flex;
+        /* 设置侧轴居中排列方式 */
+        align-items: center;
+      }
+      div span {
+        width: 100px;
+        height: 30%;
+        background-color: red;
+      }
+      .sign {
+        /* 设置自己在侧轴排列方式 */
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div><span>1</span><span>2</span><span class="sign">3</span></div>
+  </body>
+</html>

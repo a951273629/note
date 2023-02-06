@@ -1,0 +1,114 @@
+// 导入样式文件
+@import url(common.less);
+body {
+    min-width: 320px;
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    a{
+        text-decoration: none;
+    }
+
+}
+ @fontSize:50;
+.search-content{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    // 页面元素rem计算公式 页面元素的px /html字体大小
+    height: (88rem / @fontSize);
+    background-color: #ffc001;
+    .classify{
+        width: (44rem / @fontSize);
+        height: (70rem / @fontSize);
+        background-color: pink;
+        margin: (10rem / @fontSize) (25rem / @fontSize) (13rem / @fontSize) (24rem / @fontSize);
+        background: url(../img/classify.png) no-repeat;
+        // 跟着盒子同时缩放
+        background-size: (44rem / @fontSize) (70rem / @fontSize);
+    }
+    .search{
+        flex: 1;
+        input{
+
+            // 取消蓝色边框
+            font-size: (25rem / @fontSize);
+            padding-left: (55rem / @fontSize);
+            width: 100%;
+            color: #757575;
+            outline: none;
+            margin-top: (10rem / @fontSize);
+            border: 0;
+            height: (66rem / @fontSize);
+            border-radius: (33rem / @fontSize);
+            background-color: #fff2cc;
+        }
+    }
+    .login{
+        width: (75rem/@fontSize);
+        height: (70rem/@fontSize);
+        // background-color: red;
+        margin: (10rem / @fontSize);
+        font-size: (25rem / @fontSize);
+        text-align: center;
+        line-height:  (70rem/@fontSize);
+        color: white;
+    }
+}
+
+// banner
+.banner {
+    width: (750rem/@fontSize);
+    height: (368rem/@fontSize);
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// advert
+.advert {
+    display: flex;
+    a{
+        flex: 1;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: (750rem/@fontSize);
+    a {
+        
+       flex: 20%;
+       height: (140rem/@fontSize);
+       position: relative;
+    //    background-color: pink;
+       img{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: (10rem/@fontSize);
+        width: (82rem/@fontSize);
+        height: (82rem/@fontSize);
+       }
+       span{
+        color: black;
+        font-size: (18rem/@fontSize);
+        position: absolute;
+        bottom: (10rem/@fontSize);
+        left: 50%;
+        transform: translateX(-50%);
+       }
+    }
+}
+
+

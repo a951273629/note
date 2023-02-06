@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .img {
+        margin: 0 auto;
+        position: relative;
+        width: 747px;
+        height: 617px;
+        background: url("img/map.png") no-repeat;
+        background-size: cover;
+      }
+      .city {
+        position: absolute;
+        top: 242px;
+        right: 170px;
+        background-color: #009dfd;
+        border-radius: 50% 50%;
+        width: 10px;
+        height: 10px;
+      }
+      @keyframes pulse {
+        0% {
+          width: 8px;
+          height: 8px;
+        }
+        70% {
+          width: 35px;
+          height: 35px;
+        }
+        100% {
+          opacity: 0;
+          width: 70px;
+          height: 70px;
+        }
+      }
+      .city div[class^="pulse"] {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        box-shadow: 0 0 12px #009dfd;
+        border-radius: 50%;
+        animation: pulse 1.5s linear infinite;
+      }
+      .pulse1 {
+        animation-delay: 0s !important;
+      }
+      .pulse2 {
+        animation-delay: 0.5s !important;
+      }
+      .pulse3 {
+        animation-delay: 1s !important;
+      }
+
+      body {
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img">
+      <div class="city">
+        <div class="pulse1"></div>
+        <div class="pulse2"></div>
+        <div class="pulse3"></div>
+      </div>
+    </div>
+  </body>
+</html>

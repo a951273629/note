@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+</head>
+<body>
+    <button id="btn">点一点</button>
+    <script>
+        // 拦截器和取消请求配合来 防止请求连续多次发送
+        // 取消请求
+        const {CancelToken,isCancel} = axios
+        // axios请求拦截器
+        axios.interceptors.request.use((config)=>{
+            if(axios.cancel)axios.cancel();
+            config.cancelToken = new CancelToken(c=>axios.cancel=c)
+            return config
+        })
+
+        //响应拦截器 判断和处理这次返回的是取消请求还是一个错误
+        axios.interceptors.response.use(response=>{
+            return response.data;
+        },
+        error=>{
+            if(isCancel(error)){
+                console.log('取消了请求原因是',error.message);
+            }else{
+                console.log('失败了',error);
+            }
+            return new Promise(()=>{})
+        })
+
+        btn.onclick = async ()=>{
+             console.log(await axios.get('http://localhost:5000/test1?delay=3000'));  
+        }
+
+    </script>
+</body>
+</html>
